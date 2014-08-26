@@ -3,7 +3,7 @@
     <span class="glyphicon glyphicon-plus"></span>
     New Car
   <% end %>
-  <h1>See our selection of cars below</h1>
+  <h1><%= @header %></h1>
 </div>
 
 <%= will_paginate @cars, renderer: BootstrapPagination::Rails %>
@@ -19,6 +19,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
     </thead>
 
@@ -28,9 +29,12 @@
       <td><%= car.make %></td>
       <td><%= car.year %></td>
       <td><%= number_to_currency(car.price) %></td>
+      <% if current_user %>
+        <td><%= link_to 'Claim', claim_car_path(car) %></td>
+      <% end %>
       <td><%= link_to 'Show', car %></td>
       <td><%= link_to 'Edit', edit_car_path(car) %></td>
-      <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Destroy', car, method: :delete, data: {confirm: 'Are you sure?'} %></td>
     <% end %>
     </tbody>
   </table>
