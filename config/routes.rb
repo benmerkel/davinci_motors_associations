@@ -23,6 +23,10 @@ Rails.application.routes.draw do
     to: 'sessions#login',
     as: 'login'
 
+  get 'verification/:token',
+      to: 'users#verify',
+      as: 'verify_email'
+
   post '/login' => 'sessions#create'
 
   delete '/logout',

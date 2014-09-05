@@ -1,0 +1,30 @@
+<html>
+
+<p>
+  Hello <%= @user.first_name.titleize %>,
+</p>
+
+<p>
+  You recently created a <%= t('site_name') %> account
+  using your email address of <%= @user.email %>.
+</p>
+
+<p>
+  To verify your email address, please open the following link:
+</p>
+
+<%= link_to 'Verify Email', verify_email_url(@user.token) %>
+
+<p>
+  If the link does not work, please login to your account
+  and enter this token:
+</p>
+
+<p>
+  <%= @user.token %>
+</p>
+
+Thank you for visiting <%= t('site_name') %>.
+
+
+</html>

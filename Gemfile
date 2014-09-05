@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rspec-rails'
 gem 'guard-bundler'
 gem 'guard-rspec'
+gem 'rspec-collection_matchers'
 gem 'factory_girl_rails'
 group :test, :darwin, :development do
   gem 'ruby_gntp'
